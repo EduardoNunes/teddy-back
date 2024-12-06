@@ -13,4 +13,32 @@ export class ClientService {
   async create(client: Client): Promise<Client> {
     return this.clientRepository.save(client);
   }
+
+  async update(id: string, client: Client): Promise<Client> {
+    const existingClient = await this.clientRepository.findOne({
+      where: { id },
+    });
+
+    if (!existingClient) {
+      throw new Error('Client not found');
+    }
+
+    existingClient.name = client.name;
+    existingClient.salary = client.salary;
+    existingClient.enterprise = client.enterprise;
+
+    return this.clientRepository.save(existingClient);
+  }
+
+  async delete(id: string): Promise<void> {
+    const client = await this.clientRepository.findOne({
+      where: { id },
+    });
+
+    if (!client) {
+      throw new Error('Client not found');
+    }
+
+    await this.clientRepository.remove(client);
+  }
 }
