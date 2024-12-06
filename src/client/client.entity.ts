@@ -1,4 +1,4 @@
-import { SavedClient } from 'src/entities/savedClient.entity';
+import { SavedClient } from 'src/savedClients/savedClient.entity';
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 
 @Entity('clients')

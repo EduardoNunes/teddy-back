@@ -1,6 +1,6 @@
 import { Controller, Post, Body, Delete, Param, Get } from '@nestjs/common';
 import { SavedClientService } from './savedClient.service';
-import { SavedClient } from '../entities/savedClient.entity';
+import { SavedClient } from './savedClient.entity';
 
 @Controller('saved-clients')
 export class SavedClientController {
@@ -10,7 +10,6 @@ export class SavedClientController {
   async addSavedClient(
     @Body('clientId') clientId: string,
   ): Promise<SavedClient> {
-
     return this.savedClientService.addSavedClient(clientId);
   }
 

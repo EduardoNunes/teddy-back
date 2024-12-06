@@ -1,6 +1,6 @@
 import { DataSource } from 'typeorm';
 import { Client } from './client/client.entity';
-import { SavedClient } from './entities/savedClient.entity';
+import { SavedClient } from './savedClients/savedClient.entity';
 
 export const AppDataSource = new DataSource({
   type: 'postgres',

@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { SavedClient } from '../entities/savedClient.entity';
+import { SavedClient } from './savedClient.entity';
 import { Client } from 'src/client/client.entity';
 import { SavedClientService } from './savedClient.service';
 import { SavedClientController } from './savedClient.controller';

@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { TypeOrmModuleOptions, TypeOrmOptionsFactory } from '@nestjs/typeorm';
 import { Client } from 'src/client/client.entity';
 import { config } from 'dotenv';
-import { SavedClient } from 'src/entities/savedClient.entity';
+import { SavedClient } from 'src/savedClients/savedClient.entity';
 
 config();
 
@@ -22,5 +22,3 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
     };
   }
 }
-
-
