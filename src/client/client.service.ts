@@ -41,4 +41,16 @@ export class ClientService {
 
     await this.clientRepository.remove(client);
   }
+
+  async findAllPaginated(
+    page: number,
+    limit: number,
+  ): Promise<{ data: Client[]; total: number }> {
+    const [data, total] = await this.clientRepository.findAndCount({
+      skip: (page - 1) * limit,
+      take: limit,
+    });
+
+    return { data, total };
+  }
 }
