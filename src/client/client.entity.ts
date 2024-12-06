@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { SavedClient } from 'src/entities/savedClient.entity';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 
 @Entity('clients')
 export class Client {
@@ -13,4 +14,7 @@ export class Client {
 
   @Column('int')
   enterprise: number;
+
+  @OneToMany(() => SavedClient, (savedClient) => savedClient.client)
+  savedClients: SavedClient[];
 }
