@@ -10,6 +10,7 @@ export class SavedClientController {
   async addSavedClient(
     @Body('clientId') clientId: string,
   ): Promise<SavedClient> {
+
     return this.savedClientService.addSavedClient(clientId);
   }
 
